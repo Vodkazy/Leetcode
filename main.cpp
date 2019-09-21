@@ -1,8 +1,10 @@
-#include "961.h"
+#include "5.h"
 
 int main() {
     Solution ans = Solution();
-    vector<int> a = {};
-    cout<<ans.method(a);
+    string s = "ababababa";
+//    string s = "abcda";
+//    string s = "";
+    cout<<ans.longestPalindrome(s)<<endl;
     return 0;
 }
