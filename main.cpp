@@ -1,10 +1,7 @@
-#include "5.h"
+#include "7.h"
 
 int main() {
     Solution ans = Solution();
-    string s = "ababababa";
-//    string s = "abcda";
-//    string s = "";
-    cout<<ans.longestPalindrome(s)<<endl;
+    cout<<ans.reverse(123)<<endl;
     return 0;
 }
