@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
+
+using namespace std;
+
 /*
    @ 编写Solution :  2.h
    @ 主函数入口    :  main.cpp
    @ Author      :  Vodka
    @ Time        :  19-6-21 上午11:38
 */
-using namespace std;
 
 struct ListNode {
     int val;

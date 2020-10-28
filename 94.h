@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
+
+using namespace std;
+
 /*
    @ 编写Solution :  94.h
    @ 主函数入口    :  main.cpp
    @ Author      :  Vodka
    @ Time        :  20-10-27 下午3:13 
 */
-using namespace std;
 
 struct TreeNode {
     int val;

@@ -1,11 +1,13 @@
 #include <bits/stdc++.h>
+
+using namespace std;
+
 /*
    @ 编写Solution :  5547.h
    @ 主函数入口    :  main.cpp
    @ Author      :  Vodka
    @ Time        :  20-10-25 下午4:11 
 */
-using namespace std;
 
 class Solution {
 public:
