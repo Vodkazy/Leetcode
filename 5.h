@@ -11,7 +11,7 @@ using namespace std;
 
 class Solution {
 public:
-    /* dp法
+    /* dp法1
     string longestPalindrome(string s) {
         if (s == "")
             return "";
@@ -51,6 +51,32 @@ public:
         }
         return s.substr(start, len);
     }*/
+
+
+    /* dp法2（最容易理解和简洁）
+     string longestPalindrome(string s) {
+        int n = s.size();
+        vector<vector<int>> dp(n, vector<int>(n));
+        string ans;
+        for (int l = 0; l < n; ++l) { // 枚举长度
+            for (int i = 0; i + l < n; ++i) {
+                int j = i + l;
+                if (l == 0) { //如果单个字符，必然是回文
+                    dp[i][j] = 1;
+                } else if (l == 1) { //如果两个字符，则必须二者一样
+                    dp[i][j] = (s[i] == s[j]);
+                } else { // 否则[i,j]是否为回文只和[i-1,j-1]以及s[i-1]==s[j-1]有关
+                    dp[i][j] = (s[i] == s[j] && dp[i + 1][j - 1]);
+                }
+                if (dp[i][j] && l + 1 > ans.size()) {
+                    ans = s.substr(i, l + 1);
+                }
+            }
+        }
+        return ans;
+    }
+     */
+
     string longestPalindrome(string s) {
         int len = s.size();
         if (len == 0 || len == 1)
