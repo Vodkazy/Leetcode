@@ -12,17 +12,21 @@ using namespace std;
 class Solution {
 public:
     int lengthOfLongestSubstring(string s) {
-        map<char,int>ss;
-        int n = s.length();
-        int i=0 ,j=0;
-        int maxn = 0;
-        while(i<n&&j<n){
-            if(ss.find(s[j])!=ss.end()){
-                i=max(i,ss[s[j]]);
+        if(s.length()==0)return 0;
+        set<int>ss;
+        ss.insert(s[0]);
+        int head = 0;
+        int tail = 1;
+        int maxn = 1;
+        while(tail<s.length()){
+            if(ss.find(s[tail])==ss.end()){
+                ss.insert(s[tail]);
+            }else{
+                while(s[head]!=s[tail])ss.erase(s[head]),head++;
+                head++;
             }
-            maxn = max(maxn,j-i+1);
-            ss[s[j]]=j+1;
-            j++;
+            maxn = max(maxn, tail-head+1);
+            tail++;
         }
         return maxn;
     }
